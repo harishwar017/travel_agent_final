@@ -1,0 +1,204 @@
+﻿/* Base styles */
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: linear-gradient(120deg, #232526, #414345); /* Subtle gradient for background */
+    color: white;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    background: linear-gradient(120deg, #2c3e50, #4ca1af); /* Sidebar gradient */
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+#sessionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sessionList li {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sessionList li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #00c9ff; /* Fading blue text */
+    box-shadow: 0 0 10px rgba(0, 201, 255, 0.7); /* Glowing hover effect */
+}
+
+.active-session {
+    background: rgba(0, 201, 255, 0.3);
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(0, 201, 255, 0.8);
+}
+
+#chatContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(120deg, #2c3e50, #4ca1af); /* Chat container gradient */
+    padding: 10px;
+    overflow: hidden;
+}
+
+#chatWindow {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.8); /* Dark chat background */
+    border-radius: 8px;
+    color: white;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.user {
+    align-self: flex-end;
+    background: linear-gradient(120deg, #00c9ff, #92fe9d); /* Vibrant gradient */
+    color: white;
+    text-align: right;
+    box-shadow: 0 0 10px rgba(0, 201, 255, 0.7); /* Glowing effect */
+}
+
+.bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.1); /* Subtle transparent white */
+    color: white;
+    text-align: left;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+#controls {
+    display: flex;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    align-items: center;
+}
+
+#controls input {
+    flex: 1;
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#controls input:focus {
+    outline: none;
+    border-color: #00c9ff;
+    box-shadow: 0 0 8px rgba(0, 201, 255, 0.7); /* Focusing effect */
+}
+
+#controls button {
+    padding: 12px 20px;
+    background: linear-gradient(120deg, #00c9ff, #92fe9d); /* Vibrant button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#controls button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(120deg, #92fe9d, #00c9ff); /* Hover gradient */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8); /* Add depth */
+}
+
+#addSessionBtn,
+#removeSessionBtn {
+    background: linear-gradient(120deg, #00c9ff, #92fe9d);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#addSessionBtn:hover,
+#removeSessionBtn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(120deg, #92fe9d, #00c9ff);
+}
+
+/* Scrollbar customization */
+#sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #00c9ff, #92fe9d);
+    border-radius: 10px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(120deg, #92fe9d, #00c9ff);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #chatContainer {
+        max-width: 100%;
+    }
+
+    #controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #controls input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #controls button {
+        width: 100%;
+    }
+}

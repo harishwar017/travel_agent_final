@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Planner Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Sessions</h2>
+            <ul id="sessionList" class="session-list">
+                <!-- Dynamically populated sessions -->
+            </ul>
+            <button onclick="addSession(prompt('Enter a new session name:'))" class="add-session-button">+ Add Session</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Chat Window -->
+            <div class="chat-container">
+                <div id="chatWindow" class="chat-window">
+                    <!-- Dynamically populated chat messages -->
+                </div>
+                <div class="chat-input-container">
+                    <input id="userInput" type="text" placeholder="Type your message..." class="chat-input">
+                    <button id="sendButton" class="chat-send-button">Send</button>
+                </div>
+            </div>
+
+            <!-- Map and Directions -->
+            <div id="mapContainer" class="map-container">
+                <h2>Map & Directions</h2>
+                <div id="map" style="height: 400px; width: 100%;"></div>
+                <ul id="directionsList" class="directions-list">
+                    <!-- Directions dynamically populated -->
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
